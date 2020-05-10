@@ -6,3 +6,7 @@
 
 # 启动命令 python manager.py run
 
+*小程序二维码 
+![image](https://github.com/xiasanshi/jh-coupon/blob/master/resources/gh_55385468d693_258.jpg)
+
+
