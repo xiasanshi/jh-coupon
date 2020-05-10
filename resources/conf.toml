@@ -1,0 +1,15 @@
+[[file]]
+name = "file"
+store_path = "static/storage"
+rout_path = "storage"
+ext = ["jpg","gif","bmp","jpeg","png","txt"]
+
+
+[[alipay]]
+name = "key"
+public_key_path = "resources/ali_public_key.txt"
+private_key_path = "resources/face_to_face_private_key.txt"
+
+app_private_key_path = "resources/app_private_key.txt"
+app_cert_public_key_path = "resources/appCertPublicKey.crt"
+alipay_root_cert_path = "resources/alipayRootCert.crt"

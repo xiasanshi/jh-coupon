@@ -1,0 +1,31 @@
+# _*_ coding: utf-8 _*_
+from flask import current_app
+from flask.json import dumps
+
+
+def jsonify(*args, **kwargs):
+    indent = None
+    separators = (',', ':')
+
+    if current_app.config['JSONIFY_PRETTYPRINT_REGULAR'] or current_app.debug:
+        indent = 2
+        separators = (', ', ': ')
+
+    if args and kwargs:
+        raise TypeError('jsonify() behavior undefined when passed both args and kwargs')
+    elif len(args) == 1:  # single args are passed directly to dumps()
+        data = args[0]
+    else:
+        data = args or kwargs
+    return current_app.response_class(
+        dumps(data, indent=indent, separators=separators) + '\n',
+        mimetype=current_app.config['JSONIFY_MIMETYPE']
+    ).json
+
+
+def is_number(str_):
+    try:
+        a = float(str_)
+        return True
+    except:
+        return False
